@@ -75,8 +75,7 @@ RUN set -eux; \
 	apk add --no-cache --virtual .native-build-deps \
 		apr-dev \
 		coreutils \
-		dpkg-dev dpkg \
-		gcc \
+		dpkg-dev dpkg \		gcc \
 		libc-dev \
 		make \
 		"openjdk${JAVA_VERSION%%[-~bu]*}"="$JAVA_ALPINE_VERSION" \
@@ -122,8 +121,7 @@ RUN set -e \
 		exit 1; \
 	fi
 
-EXPOSE 8080
-COPY helloworld.war /usr/local/tomcat/webapps
+EXPOSE 8089
 COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-user.xml
 CMD ["catalina.sh", "run"]
 
